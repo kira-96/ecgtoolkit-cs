@@ -1,0 +1,64 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlarmManager", "AlarmManager\AlarmManager.csproj", "{CD003C91-EE2C-43CF-B9AB-9240C4073C86}"
+	ProjectSection(WebsiteProperties) = preProject
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.Debug = "False"
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlarmManagerUI", "AlarmManagerUI\AlarmManagerUI.csproj", "{2814AD65-9E43-4DA5-ABA5-76FCEE272625}"
+	ProjectSection(WebsiteProperties) = preProject
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.Debug = "False"
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlarmLib", "..\libs\AlarmLib\AlarmLib.csproj", "{5637EDF1-88F2-45CE-9C9F-02E801942DDC}"
+	ProjectSection(WebsiteProperties) = preProject
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.Debug = "False"
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlarmQuery", "AlarmQuery\AlarmQuery.csproj", "{6DBA666A-669A-4CC7-9A40-8E7F7E02EDA7}"
+	ProjectSection(WebsiteProperties) = preProject
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.Debug = "False"
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlarmRss", "AlarmRss\AlarmRss.csproj", "{63EDF4E1-4BC9-4794-8B06-9A499DB8A8D6}"
+	ProjectSection(WebsiteProperties) = preProject
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.Debug = "False"
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CD003C91-EE2C-43CF-B9AB-9240C4073C86}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CD003C91-EE2C-43CF-B9AB-9240C4073C86}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CD003C91-EE2C-43CF-B9AB-9240C4073C86}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CD003C91-EE2C-43CF-B9AB-9240C4073C86}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2814AD65-9E43-4DA5-ABA5-76FCEE272625}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2814AD65-9E43-4DA5-ABA5-76FCEE272625}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2814AD65-9E43-4DA5-ABA5-76FCEE272625}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2814AD65-9E43-4DA5-ABA5-76FCEE272625}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5637EDF1-88F2-45CE-9C9F-02E801942DDC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5637EDF1-88F2-45CE-9C9F-02E801942DDC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5637EDF1-88F2-45CE-9C9F-02E801942DDC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5637EDF1-88F2-45CE-9C9F-02E801942DDC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6DBA666A-669A-4CC7-9A40-8E7F7E02EDA7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6DBA666A-669A-4CC7-9A40-8E7F7E02EDA7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6DBA666A-669A-4CC7-9A40-8E7F7E02EDA7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6DBA666A-669A-4CC7-9A40-8E7F7E02EDA7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{63EDF4E1-4BC9-4794-8B06-9A499DB8A8D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{63EDF4E1-4BC9-4794-8B06-9A499DB8A8D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{63EDF4E1-4BC9-4794-8B06-9A499DB8A8D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{63EDF4E1-4BC9-4794-8B06-9A499DB8A8D6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
