@@ -29,7 +29,7 @@ using System.Runtime.CompilerServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("van Ettinger Information Technology")]
 [assembly: AssemblyProduct("")]
-[assembly: AssemblyCopyright("Copyright 2012-2014, van Ettinger Information Technology, Lopik, The Netherlands\nCopyright 2008-2010, Thoraxcentrum, Erasmus MC, Rotterdam, The Netherlands")]
+[assembly: AssemblyCopyright("Copyright 2019, Thoraxcentrum, Erasmus MC, Rotterdam, The Netherlands\nCopyright 2012-2014, van Ettinger Information Technology, Lopik, The Netherlands\nCopyright 2008-2012, Thoraxcentrum, Erasmus MC, Rotterdam, The Netherlands")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]		
 

@@ -38,10 +38,7 @@
     <Compile Include="PDF\PDFDemographics.cs" />
     <Compile Include="PDF\PDFFormat.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="libs\" />
-    <Folder Include="PDF\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="libs\1.1\itextsharp.dll" />
     <None Include="libs\2.0\itextsharp.dll" />
