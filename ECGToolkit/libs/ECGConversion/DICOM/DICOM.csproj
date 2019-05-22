@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -45,17 +45,13 @@
     <None Include="libs\2.0\log4net.dll" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="libs\1.1\dicomcs.dll" />
-    <None Include="libs\1.1\log4net.dll" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\ECGConversion\ECGConversion.csproj">
       <Project>{F969B245-DCD2-4AF6-AE74-E95F778D2339}</Project>
       <Name>ECGConversion</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="dicomcs, Version=0.2.4.1, Culture=neutral, PublicKeyToken=bc2de4c18607e924">
+    <Reference Include="dicomcs, Version=0.3.0.0, Culture=neutral, PublicKeyToken=bc2de4c18607e924, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>libs\2.0\dicomcs.dll</HintPath>
     </Reference>
