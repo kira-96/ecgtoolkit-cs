@@ -1,5 +1,6 @@
 /***************************************************************************
-Copyright 2012-2014,2019, van Ettinger Information Technology, Lopik, The Netherlands
+Copyright 2019, Thoraxcentrum, Erasmus MC, Rotterdam, The Netherlands\n
+Copyright 2012-2014, van Ettinger Information Technology, Lopik, The Netherlands
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -28,7 +29,7 @@ using System.Runtime.CompilerServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("van Ettinger Information Technology")]
 [assembly: AssemblyProduct("")]
-[assembly: AssemblyCopyright("Copyright 2012-2014,2019, van Ettinger Information Technology, Lopik, The Netherlands")]
+[assembly: AssemblyCopyright("Copyright 2019, Thoraxcentrum, Erasmus MC, Rotterdam, The Netherlands\nCopyright 2012-2014, van Ettinger Information Technology, Lopik, The Netherlands")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]		
 
