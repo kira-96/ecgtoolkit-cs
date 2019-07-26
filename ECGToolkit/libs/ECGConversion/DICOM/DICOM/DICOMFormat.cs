@@ -852,8 +852,8 @@ namespace ECGConversion.DICOM
 		}
 		public string PatientID
 		{
-			get {return _DICOMData.GetString(Tags.PatientID);}
-			set {if (value != null) _DICOMData.PutLO(Tags.PatientID, value);}
+            get {return _DICOMData.GetString(Tags.PatientID);}
+            set { if (value != null) _DICOMData.PutLO(Tags.PatientID, value); else if (_DICOMData.GetItem(Tags.PatientID) != null) _DICOMData.Remove(Tags.PatientID); }
 		}
 		public string SecondLastName
 		{
@@ -948,6 +948,10 @@ namespace ECGConversion.DICOM
 
 				return 0;
 			}
+            else if (_DICOMData.GetItem(Tags.PatientAge) != null)
+            {
+                _DICOMData.Remove(Tags.PatientAge);
+            }
 
 			return 1;
 		}
@@ -969,6 +973,11 @@ namespace ECGConversion.DICOM
 				{
 					_DICOMData.PutDA(Tags.PatientBirthDate, new DateTime(value.Year, value.Month, value.Day));
 				}
+                else if ((value == null)
+                    &&   (_DICOMData.GetItem(Tags.PatientBirthDate) != null))
+                {
+                    _DICOMData.Remove(Tags.PatientBirthDate);
+                }
 			}
 		}
 		public int getPatientHeight(out ushort val, out HeightDefinition def)
@@ -1012,9 +1021,7 @@ namespace ECGConversion.DICOM
 					break;
 				case HeightDefinition.Millimeters:
 					val2 = val * 0.001;
-					break;
-
-					
+					break;	
 			}
 
 			if (val2 > 0)
@@ -1025,6 +1032,11 @@ namespace ECGConversion.DICOM
 
 				return 0;
 			}
+            else if ((val2 == double.MinValue)
+            &&       (_DICOMData.GetItem(Tags.PatientSize)) != null)
+            {
+                _DICOMData.Remove(Tags.PatientSize);
+            }
 
 			return 1;
 		}
@@ -1082,6 +1094,11 @@ namespace ECGConversion.DICOM
 
 				return 0;
 			}
+            else if ((val2 == double.MinValue)
+                &&   (_DICOMData.GetItem(Tags.PatientWeight)) != null)
+            {
+                _DICOMData.Remove(Tags.PatientWeight);
+            }
 
 			return 1;
 		}
@@ -1124,6 +1141,8 @@ namespace ECGConversion.DICOM
 
 					if (sexText != null)
 						_DICOMData.PutCS(Tags.PatientSex, sexText);
+                    else if (_DICOMData.GetItem(Tags.PatientSex) != null)
+                        _DICOMData.Remove(Tags.PatientSex);
 				}
 			}
 		}
@@ -1154,8 +1173,16 @@ namespace ECGConversion.DICOM
 			}
 			set
 			{
-				_DICOMData.PutLO(Tags.Manufacturer, ((DeviceManufactor)value.ManufactorID).ToString());
-				_DICOMData.PutLO(Tags.ManufacturerModelName, BytesTool.readString(value.ModelDescription, 0, value.ModelDescription.Length));
+                if (value != null)
+                {
+                    _DICOMData.PutLO(Tags.Manufacturer, ((DeviceManufactor)value.ManufactorID).ToString());
+                    _DICOMData.PutLO(Tags.ManufacturerModelName, BytesTool.readString(value.ModelDescription, 0, value.ModelDescription.Length));
+                }
+                else
+                {
+                    if (_DICOMData.GetItem(Tags.Manufacturer) != null) _DICOMData.Remove(Tags.Manufacturer);
+                    if (_DICOMData.GetItem(Tags.ManufacturerModelName) != null) _DICOMData.Remove(Tags.ManufacturerModelName);
+                }
 			}
 		}
 		public AcquiringDeviceID AnalyzingMachineID
@@ -1335,8 +1362,8 @@ namespace ECGConversion.DICOM
 		}
 		public string[] FreeTextFields
 		{
-			get {return _DICOMData.GetStrings(Tags.VisitComments);}
-			set {if (value != null) _DICOMData.PutLT(Tags.VisitComments, value);}
+            get {return _DICOMData.GetStrings(Tags.VisitComments);}
+            set { if (value != null) _DICOMData.PutLT(Tags.VisitComments, value); else if (_DICOMData.GetItem(Tags.VisitComments) != null) _DICOMData.Remove(Tags.VisitComments); }
 		}
 		public string SequenceNr
 		{
@@ -1418,8 +1445,8 @@ namespace ECGConversion.DICOM
 		}
 		public string AcqInstitution
 		{
-			get {return _DICOMData.GetString(Tags.InstitutionName);}
-			set {if (value != null) _DICOMData.PutLO(Tags.InstitutionName, value);}
+            get {return _DICOMData.GetString(Tags.InstitutionName);}
+            set { if (value != null) _DICOMData.PutLO(Tags.InstitutionName, value); else if (_DICOMData.GetItem(Tags.InstitutionName) != null) _DICOMData.Remove(Tags.InstitutionName); }
 		}
 		public string AnalyzingInstitution
 		{
@@ -1428,8 +1455,8 @@ namespace ECGConversion.DICOM
 		}
 		public string AcqDepartment
 		{
-			get {return _DICOMData.GetString(Tags.InstitutionalDepartmentName);}
-			set {if (value != null) _DICOMData.PutLO(Tags.InstitutionalDepartmentName, value);}
+            get {return _DICOMData.GetString(Tags.InstitutionalDepartmentName);}
+            set { if (value != null) _DICOMData.PutLO(Tags.InstitutionalDepartmentName, value); else if (_DICOMData.GetItem(Tags.InstitutionalDepartmentName) != null) _DICOMData.Remove(Tags.InstitutionalDepartmentName); }
 		}
 		public string AnalyzingDepartment
 		{
@@ -1438,48 +1465,48 @@ namespace ECGConversion.DICOM
 		}
 		public string ReferringPhysician
 		{
-			get {return _DICOMData.GetString(Tags.ReferringPhysicianName);}
-			set {if (value != null) _DICOMData.PutPN(Tags.ReferringPhysicianName, value);}
+            get {return _DICOMData.GetString(Tags.ReferringPhysicianName);}
+            set { if (value != null) _DICOMData.PutPN(Tags.ReferringPhysicianName, value); else if (_DICOMData.GetItem(Tags.ReferringPhysicianName) != null) _DICOMData.Remove(Tags.ReferringPhysicianName); }
 		}
 		public string OverreadingPhysician
 		{
-			get {return _DICOMData.GetString(Tags.NameOfPhysiciansReadingStudy);}
-			set {if (value != null) _DICOMData.PutPN(Tags.NameOfPhysiciansReadingStudy, value);}
+            get {return _DICOMData.GetString(Tags.NameOfPhysiciansReadingStudy);}
+            set { if (value != null) _DICOMData.PutPN(Tags.NameOfPhysiciansReadingStudy, value); else if (_DICOMData.GetItem(Tags.NameOfPhysiciansReadingStudy ) != null) _DICOMData.Remove(Tags.NameOfPhysiciansReadingStudy); }
 		}
 		public string TechnicianDescription
 		{
-			get {return _DICOMData.GetString(Tags.OperatorsName);}
-			set {if (value != null) _DICOMData.PutPN(Tags.OperatorsName, value);}
+            get {return _DICOMData.GetString(Tags.OperatorsName);}
+            set { if (value != null) _DICOMData.PutPN(Tags.OperatorsName, value); else if (_DICOMData.GetItem(Tags.OperatorsName) != null) _DICOMData.Remove(Tags.OperatorsName); }
 		}
 		public ushort SystolicBloodPressure
 		{
-			get {return 0;}
-			set {}
+            get {return 0;}
+            set {}
 		}
 		public ushort DiastolicBloodPressure
 		{
-			get {return 0;}
-			set {}
+            get {return 0;}
+            set {}
 		}
 		public Drug[] Drugs
 		{
-			get {return null;}
-			set {}
+            get {return null;}
+            set {}
 		}
 		public string[] ReferralIndication
 		{
-			get {return null;}
-			set {}
+            get {return null;}
+            set {}
 		}
 		public string RoomDescription
 		{
-			get {return null;}
-			set {}
+            get {return _DICOMData.GetString(Tags.CurrentPatientLocation);}
+            set { if (value != null) _DICOMData.PutLO(Tags.CurrentPatientLocation, value); else if (_DICOMData.GetItem(Tags.CurrentPatientLocation) != null) _DICOMData.Remove(Tags.CurrentPatientLocation); }
 		}
 		public byte StatCode
 		{
-			get {return 0xff;}
-			set {}
+            get {return 0xff;}
+            set {}
 		}
 		#endregion
 
