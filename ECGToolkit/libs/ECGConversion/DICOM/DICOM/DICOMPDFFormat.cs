@@ -88,7 +88,7 @@ namespace ECGConversion.DICOM
         {
             get
             {
-                return string.Compare(_Config["Mortara Compatibility"], "true", true) == 0;
+                return _MortaraDiagCompat != MortaraDiagCompat.False;
             }
         }
 
@@ -416,7 +416,7 @@ namespace ECGConversion.DICOM
 
                         if (baTemp != null)
                         {
-                            int size = o; //LookForPdfEnd(baTemp, 0);
+                            int size = o;
 
                             byte[] baBuffer = new byte[size];
 

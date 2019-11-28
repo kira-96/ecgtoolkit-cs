@@ -170,13 +170,13 @@ namespace ECGConversion.DICOM
 			Error = 0xff,
 		}
 
-		private bool _MortaraCompat
-		{
-			get
-			{
-				return string.Compare(_Config["Mortara Compatibility"], "true", true) == 0;
-			}
-		}
+        private bool _MortaraCompat
+        {
+            get
+            {
+                return _MortaraDiagCompat != MortaraDiagCompat.False;
+            }
+        }
 		
 		private MortaraDiagCompat _MortaraDiagCompat
 		{
@@ -1622,7 +1622,11 @@ namespace ECGConversion.DICOM
 							{
 								int temp = ds.GetInteger(Tags.AnnotationGroupNumber);
 								
-								if (annotationGroupNumber <= temp)
+								if ((temp == 0)
+                                &&  (annotationGroupNumber == 0))
+                                    annotationGroupNumber = 5;
+                                else if ((temp >= 5)
+                                    &&   (annotationGroupNumber <= temp))
 									annotationGroupNumber = temp + 1;
 							}
 							else if (ds.Get(Tags.UnformattedTextValue) == null)
